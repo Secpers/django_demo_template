@@ -16,5 +16,17 @@ pipeline {
                 sh 'python manage.py test'
             }
         }
+        stage("reports") {
+            steps {
+                sh 'coverage xml'
+            }
+        }
+    }
+    post {
+        success {
+            recordCoverage(tools: [[parser: 'COBERTURA', pattern: 'coverage.xml']],
+                id: 'COBERTURA', name: 'COBERTURA Coverage',
+                sourceCodeRetention: 'EVERY_BUILD')
+        }
     }
 }
