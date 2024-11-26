@@ -1,9 +1,12 @@
 pipeline {
     agent any
+    environment {
+        IMAGE_NAME = 'iorp/django_demo_secpers'
+    }
     stages {
         stage("build") {
             steps {
-                sh 'docker build . -t iorp/django_demo_secpers:${GIT_COMMIT}'
+                sh 'docker build . -t ${IMAGE_NAME}:${GIT_COMMIT}'
             }
         }
     }
