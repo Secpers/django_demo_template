@@ -9,7 +9,8 @@ pipeline {
                 build job: '/Глазырин_Илья/parametrized-test',
                     parameters: [
                         string(name: 'GIT_URL', value: "${GIT_URL}"),
-                        string(name: 'GIT_BRANCH', value: "${GIT_BRANCH}")
+                        string(name: 'GIT_BRANCH', value: "${GIT_BRANCH}"),
+                        string(name: 'PROJECT_NAME', value: "django_demo_site")
                     ]
             }
         }
