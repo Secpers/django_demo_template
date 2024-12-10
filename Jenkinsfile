@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage("test") {
             steps {
-                build job: '/Глазырин Илья/job/parametrized test',
+                build job: '/Глазырин_Илья/parametrized-test',
                     parameters: [
                         string(name: 'GIT_URL', value: "${GIT_URL}"),
                         string(name: 'GIT_BRANCH', value: "${GIT_BRANCH}")
@@ -15,7 +15,7 @@ pipeline {
         }
         stage("build") {
             steps {
-                build job: '/Глазырин Илья/job/parametrized build',
+                build job: '/Глазырин_Илья/parametrized-build',
                     parameters: [
                         string(name: 'GIT_URL', value: "${GIT_URL}"),
                         string(name: 'GIT_BRANCH', value: "${GIT_BRANCH}"),
