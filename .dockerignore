@@ -1,1 +1,4 @@
 venv
+Jenkinsfile
+Jenkinsfile.build
+Jenkinsfile.test
