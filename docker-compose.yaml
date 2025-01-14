@@ -1,0 +1,7 @@
+version: "3"
+
+services:
+  backend:
+    image: secpers/django_devops:latest
+    ports:
+      - "8090:8000"
